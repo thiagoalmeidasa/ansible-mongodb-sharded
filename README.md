@@ -12,6 +12,46 @@ Minimum required ansible version is 2.4.
 
   * {'name': 'mongodb-base', 'src': 'https://github.com/thiagoalmeidasa/ansible-mongodb.git'}
 
+## Installation
+
+### Install with Ansible Galaxy
+
+```shell
+ansible-galaxy install thiagoalmeidasa.ansible-mongodb-sharded
+```
+
+Basic usage is:
+
+```yaml
+- hosts: all
+  roles:
+    - role: thiagoalmeidasa.ansible-mongodb-sharded
+```
+
+### Install with git
+
+If you do not want a global installation, clone it into your `roles_path`.
+
+```shell
+git clone git@github.com:thiagoalmeidasa/ansible-ansible-mongodb-sharded.git /path/to/roles_path
+```
+
+But I often add it as a submdule in a given `playbook_dir` repository.
+
+```shell
+git submodule add git@github.com:thiagoalmeidasa/ansible-ansible-mongodb-sharded.git <playbook_dir>/roles/ansible-mongodb-sharded
+```
+
+As the role is not managed by Ansible Galaxy, you do not have to specify the
+github user account.
+
+Basic usage is:
+
+```yaml
+- hosts: all
+  roles:
+  - role: ansible-mongodb-sharded
+```
 
 ## Role Variables
 
